@@ -1,42 +1,39 @@
 <html>
     <script>
 
-///<!-- 1.	Sigma - Implement function sigma(num) that, given a number, returns the sum of all positive integers up to the given number (inclusive).  Ex: sigma(3) = 6 (or 1+2+3); sigma(5) = 15 (or 1+2+3+4+5). -->
+///<!-- 1.	Sigma - Implement function sigma(n) that, given a number, returns the sum of all positive integers up to the given number (inclusive).  Ex: sigma(3) = 6 (or 1+2+3); sigma(5) = 15 (or 1+2+3+4+5). -->
 
-function sigma(num) {
+function sigma(n){
 var sum = 0;
-for (var i = 0; i <= num; i++) {
-sum += i;
-}
-console.log(sum);
+for (var i = 0; i <= n; i++){
+sum= sum+i;
+
 return sum;
 }
-sigma(5);
-sigma(3);
-
-function reverseSigma(num) {
-var sum = 0;
-for (var i = 0; i < num; i++) {
-sum += num – i;
-}
 console.log(sum);
-return sum;
 }
 sigma(5);
-sigma(3);
 
-///<!-- 2.	Factorial - Write a function factorial(num) that, given a number, returns the product (multiplication) of all positive integers from 1 up to the given number (inclusive).  For example, factorial(3) = 6 (or 1*2*3); factorial(5) = 120 (or 1*2*3*4*5). -->
+function reverseSigma(n){
+var sum = 0;
+for (var i = 0; i < n; i++){
+}
+return sum;
+console.log(sum);
+}
+sigma(5);
 
-function factorial(num) {
+///<!-- 2.	Factorial - Write a function factorial(n) that, given a number, returns the product (multiplication) of all positive integers from 1 up to the given number (inclusive).  For example, factorial(3) = 6 (or 1*2*3); factorial(5) = 120 (or 1*2*3*4*5). -->
+
+function factorial(n){
 var sum = 1;
-for (var i = 1; i <= num; i++) {
-sum *= i;
+for (var i = 1; i <= n; i++){
+sum = sum*i;
 }
 console.log(sum);
 return sum;
 }
 factorial(3);
-factorial(4);
 
 ///<!-- 3.	Fibonacci - Create a function to generate Fibonacci numbers.  In this famous mathematical sequence, each number is the sum of the previous two, starting with values 0 and 1.  Your function should accept one argument, an index into the sequence (where 0 corresponds to the initial value, 4 corresponds to the value four later, etc).  Examples: fibonacci(0) = 0 (given), fibonacci(1) = 1 (given), fibonacci(2) = 1 (fib(0)+fib(1), or 0+1), fibonacci(3) = 2 (fib(1) + fib(2)3, or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8).  Do this without using recursion first.  If you don't know what a recursion is yet, don't worry as we'll be introducing this concept in Part 2 of this assignment.
 
@@ -45,13 +42,13 @@ factorial(4);
 //  F0     F1     F2     F3     F4     F5     F6     F7     F8     F9     F10     F11     F12     F13     F14     F15        F16
 //   0     1     1     2     3     5     8     13     21     34     55         89      144     233     377     610        987 -->
 
-function fibonacci(num) {
-if (num === 0) {
+function fibonacci(n){
+if (n === 0) {
 return 0;
-} else if (num === 1) {
+} else if (n === 1){
 return 1;
 } else {
-return fibonacci(num – 2) + fibonacci(num – 1);
+return fibonacci(n – 2) + fibonacci(n – 1);
 }
 }
 console.log(fibonacci(1));
@@ -62,11 +59,11 @@ console.log(fibonacci(15));
 // “a” represents (number – 2)
 // “b” represents (number – 1)
 
-function fibonacciShortened(num) {
-return num === 0 ? 0 : fibonacci(0, 1, num);
+function fibonacciShortened(n) {
+return n === 0 ? 0 : fibonacci(0, 1, n);
 }
-function fibonacci(a, b, num) {
-return num === 1 ? b : fibonacci(b, a + b, num – 1);
+function fibonacci(a, b, n) {
+return n === 1 ? b : fibonacci(b, a + b, n – 1);
 }
 console.log(fibonacciShortened(1));
 console.log(fibonacciShortened(2));
@@ -97,18 +94,18 @@ function nthLast(arr, n){
 ///<!-- 6.	Array: Second-Largest: Return the second-largest element of an array. Given [42,1,4,3.14,7], return 7.  If the array is too short, return null. -->
 
 function nextLargest(arr){
-    num = arr[0];
-    num2 = arr[0];
+    n = arr[0];
+    n2 = arr[0];
     if(arr.length > 1){
         for(i = 0; i < arr.length; i++){
-            if(arr[i] > num){
-                num = arr[i];
+            if(arr[i] > n){
+                n = arr[i];
             }
-            else if(arr[i] > num2){
-                num2 = arr[i];
+            else if(arr[i] > n2){
+                n2 = arr[i];
 }
 }
-        return num2;
+        return n2;
 }
     else if(arr.length == 1){
         return null;
@@ -118,11 +115,12 @@ function nextLargest(arr){
 ///<!-- 7.	Double Trouble: Create a function that changes a given array to list each existing element twice, retaining original order.  Convert [4, "Ulysses", 42, false] to [4,4, "Ulysses", "Ulysses", 42, 42, false, false]. -->
 
 function doubleTrouble(arr){
-    for(i = arr.length - 1; i >= 0; i--){
-        arr[i + i + 1] = arr[i];
-        arr[i + i] = arr[i];
+    var double=[];
+    for(var i = 0; i<=arr.length - 1; i++){
+        double.push(arr[i]);
+        double.push(arr[i]);
     }
-    return arr;
+    return double;
 }
     </script>
 </html>
